@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>PT.PLN ULP JAJAG</title>
 
   <!-- Custom fonts for this template-->
   <link href="sb/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -27,7 +27,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    @include('layout.sidebar')
+   @include('petugas.layout.sidebar')
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -43,51 +43,150 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Admin</h1>
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
 
           <!-- Content Row -->
-        
+
+
           <!-- Content Row -->
 
           <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-12 col-lg-12">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                </div>
               </div>
             </div>
+           
+           
+
+              <!-- Tabel data laporan -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
+                </div>
+                <div class="card-body">
+                    <div class="justify-content-between dropdown">
+                        <button class="d-none d-sm-inline-block btn btn-sm btn-primary  shadow-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pilih
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button">Inspeksi Kegiatan</button>
+                            <button class="dropdown-item" type="button">Inspeksi Instalasi Tenaga Listrik</button>
+                        </div>
+                        <a href=""  class="btn btn-primary float-right btn-sm"><i class="fas fa-plus"></i>  Tambah</a>
+
+                </div>       
+                
+                </div>
+
+                
+                <table class="table table-bordered">
+              <thead>
+           <tr>
+              <th scope="col">No</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Detail Temuan</th>
+              <th scope="col">Alamat</th>
+              <th scope="col">Koordinat</th>
+              <th scope="col">Potensi Bahaya</th>
+              <th scope="col">Evidence</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+              <th scope="col"></th>
+                                                        
+            </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+      <td>1/03/2021</td>
+      <td>Pembangunan Dekat Jaringan 20V</td>
+      <td>Gambiran</td>
+      <td>-123456789</td>
+      <td>Tersengat Listrik</td>
+      <td>Gambar</td>
+      <td>Telah Melakukan Sosialisasi</td>
+      <td class="project-actions text-center">
+      <a style="color: #00bcd4; padding: 0px; background: none" href="">
+      <i class="fas fa-edit"></i></a>
+      
+      <!-- <form action="" method="get">
+          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
+          <i class="fas fa-trash"></i></button> 
+        </form> -->
+      </td>
+      <td> <a href=""  class="d-none d-sm-inline-block btn btn-sm btn-primary float-right"><i class=""></i> Detail</a>
+
+      </td>
+    </tr>
+
+    <tr>
+    <th scope="row">1</th>
+      <td>1/03/2021</td>
+      <td>Pembangunan Dekat Jaringan 20V</td>
+      <td>Gambiran</td>
+      <td>-123456789</td>
+      <td>Tersengat Listrik</td>
+      <td>Gambar</td>
+      <td>Telah Melakukan Sosialisasi</td>
+      <td class="project-actions text-center">
+      <a style="color: #00bcd4; padding: 0px; background: none" href="">
+      <i class="fas fa-edit"></i></a>
+      
+      <!-- <form action="" method="get">
+          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
+          <i class="fas fa-trash"></i></button> 
+        </form> -->
+      </td>
+      <td> <a href=""  class="d-none d-sm-inline-block btn btn-sm btn-primary float-right"><i class=""></i> Detail</a>
+
+      </td>
+    </tr>
+
+    <tr>
+    <th scope="row">1</th>
+      <td>1/03/2021</td>
+      <td>Pembangunan Dekat Jaringan 20V</td>
+      <td>Gambiran</td>
+      <td>-123456789</td>
+      <td>Tersengat Listrik</td>
+      <td>Gambar</td>
+      <td>Telah Melakukan Sosialisasi</td>
+      <td class="project-actions text-center">
+      <a style="color: #00bcd4; padding: 0px; background: none" href="">
+      <i class="fas fa-edit"></i></a>
+      
+      <!-- <form action="" method="get">
+          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
+          <i class="fas fa-trash"></i></button> 
+        </form> -->
+      </td>
+      <td> <a href=""  class="d-none d-sm-inline-block btn btn-sm btn-primary float-right"><i class=""></i> Detail</a>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+                    </div>
+                </div>
+              </div>
+
+
 
             <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
-              <div class="card shadow mb-4">
+            <!-- <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4"> -->
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -101,9 +200,9 @@
                       <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- Card Body -->
-                <div class="card-body">
+                <!-- <div class="card-body">
                   <div class="chart-pie pt-4 pb-2">
                     <canvas id="myPieChart"></canvas>
                   </div>
@@ -118,19 +217,19 @@
                       <i class="fas fa-circle text-info"></i> Referral
                     </span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                </div> -->
+              <!-- </div>
+            </div> -->
+          
 
           <!-- Content Row -->
-          <div class="row">
+          <!-- <div class="row"> -->
 
             <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+            <!-- <div class="col-lg-6 mb-4"> -->
 
               <!-- Project Card Example -->
-              <div class="card shadow mb-4">
+              <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
                 </div>
@@ -156,10 +255,10 @@
                     <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Color System -->
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-primary text-white shadow">
                     <div class="card-body">
@@ -223,15 +322,15 @@
                       <div class="text-white-50 small">#5a5c69</div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div> -->
 
-            </div>
+            <!-- </div> -->
 
-            <div class="col-lg-6 mb-4">
+            <!-- <div class="col-lg-6 mb-4"> -->
 
               <!-- Illustrations -->
-              <div class="card shadow mb-4">
+              <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
                 </div>
@@ -242,26 +341,27 @@
                   <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
                   <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Approach -->
-              <div class="card shadow mb-4">
+              <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
                 </div>
                 <div class="card-body">
                   <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p>
                   <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
-                </div>
-              </div>
+                </div> -->
+              <!-- </div> -->
 
-            </div>
-          </div>
+            <!-- </div> -->
+          <!-- </div>
+        
+       
+       
+        <!-.container-fluid -->
 
-        </div>
-        <!-- /.container-fluid -->
 
-      </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -272,15 +372,16 @@
     <!-- End of Content Wrapper -->
 
   </div>
+  
   <!-- End of Page Wrapper -->
-
+ 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -296,7 +397,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Bootstrap core JavaScript-->
   <script src="sb/vendor/jquery/jquery.min.js"></script>
@@ -314,6 +415,7 @@
   <!-- Page level custom scripts -->
   <script src="sb/js/demo/chart-area-demo.js"></script>
   <script src="sb/js/demo/chart-pie-demo.js"></script>
+  <script src="sb/js/demo/chart-bar-demo.js"></script>
 
 </body>
 

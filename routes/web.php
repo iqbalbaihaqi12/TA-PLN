@@ -13,14 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+    
+ 
+
+
 Route::get('/', function () {
     return view('login');
-});
-
-Route::get('/admin', function () {
-    return view('admin/index');
-});
+})->name('login'); 
 
 Route::post('/postlogin','LoginController@postlogin')->name('postlogin');
+Route::get('/logout','LoginController@logout')->name('logout');
 
+Route::group(['middleware' => ['auth','ceklevel:admin']],function(){
+    Route::get('/admin','AdminController@index'); 
+});
 
+Route::group(['middleware' => ['auth','ceklevel:petugas']],function(){
+    Route::get('/petugas','PetugasController@index');
+});
+
+Route::group(['middleware' => ['auth','ceklevel:pimpinan']],function(){
+    Route::get('/pimpinan','PimpinanController@index'); 
+});
