@@ -55,8 +55,6 @@
 
           <!-- Content Row -->
 
-
-          
           <div class="row">
 
             <!-- Area Chart -->
@@ -84,89 +82,34 @@
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Tambah Jadwal Inspeksi</h6>
                 </div>
+                
                 <div class="card-body">
-                <table class="table table-bordered">
-              <thead>
-           <tr>
-              <th scope="col">No</th>
-              <th scope="col">Tanggal</th>
-              <th scope="col">Detail Temuan</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">Koordinat</th>
-              <th scope="col">Potensi Bahaya</th>
-              <th scope="col">Evidence</th>
-              <th scope="col">Status</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Hapus</th>
-                                                        
-            </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
+                    <form action="{{route('simpan-jadwal')}}" method="post">
+                    {{ csrf_field() }}
+                   
+                    <div class="form-group">
+
+                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal">
+            
                     </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="penyulang" placeholder="Penyulang">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="section" placeholder="Section">
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+
+          
+                
+
+                  </div>
                 </div>
               </div>
 

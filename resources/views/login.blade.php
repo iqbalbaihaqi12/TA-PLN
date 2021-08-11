@@ -18,7 +18,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-  <i class="fas fa-bolt"></i> 
+  <i class="fas fa-bolt"></i>
   <br>
 
     <a href="#"><b> Unit Layanan Pelanggan JAJAG</b></a>

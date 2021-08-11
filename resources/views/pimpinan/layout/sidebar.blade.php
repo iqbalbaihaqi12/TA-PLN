@@ -19,12 +19,10 @@
 </li>
 
 <!-- Divider -->
-<hr class="sidebar-divider">
+
 
 <!-- Heading -->
-<div class="sidebar-heading">
-  Interface
-</div>
+
 
 <!-- Nav Item - Pages Collapse Menu -->
 <!-- <li class="nav-item">
@@ -67,19 +65,7 @@
 </div> -->
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-    <i class="fas fa-fw fa-folder"></i>
-    <span>Laporan</span>
-  </a>
-  <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-    <div class="collapse-inner rounded">
-      <a class="collapse-item" href="login.html">Laporan Inspeksi Kegiatan</a>
-      <a class="collapse-item" href="register.html">Laporan Inspeksi Instalasi <br> Tenaga Listrik</a>
 
-    </div>
-  </div>
-</li>
 
 <!-- Nav Item - Charts -->
 <!-- <li class="nav-item">

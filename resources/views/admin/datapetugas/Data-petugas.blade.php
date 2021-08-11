@@ -55,8 +55,6 @@
 
           <!-- Content Row -->
 
-
-          
           <div class="row">
 
             <!-- Area Chart -->
@@ -67,7 +65,7 @@
                 <!-- Card Body -->
               </div>
             </div>
-           
+
             <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
@@ -77,94 +75,51 @@
                     <canvas id="myBarChart"></canvas>
                   </div>
                   <hr>
-                    
+
                 </div>
               </div> -->
 
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Kelola Akun Petugas</h6>
                 </div>
+
                 <div class="card-body">
+                <a href="/admin/create-datapetugas"  class="btn btn-primary float-right btn-sm"><i class="fas fa-plus"></i>  Tambah Jadwal</a>
+
                 <table class="table table-bordered">
               <thead>
            <tr>
               <th scope="col">No</th>
-              <th scope="col">Tanggal</th>
-              <th scope="col">Detail Temuan</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">Koordinat</th>
-              <th scope="col">Potensi Bahaya</th>
-              <th scope="col">Evidence</th>
-              <th scope="col">Status</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Hapus</th>
-                                                        
+              <th scope="col">Nama Petugas</th>
+              <th scope="col">Jabatan</th>
+              <th scope="col">Email</th>
+              <th scope="col">Username</th>
+              <th scope="col">Action</th>
+
             </tr>
   </thead>
+  @foreach($datapetugas as $item)
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
+      <td>{{$loop->iteration}}</td>
+      <td>{{$item->name}}</td>
+      <td>{{$item->level}}</td>
+      <td>{{$item->email}}</td>
+      <td>{{$item->username}}</td>
+
+
       <td>
-      <form action="" method="get">
+      <form action="{{url('/admin/hapus-datapetugas',$item->id)}}" method="get">
           <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
+          <i class="fas fa-trash"></i></button>
         </form>
       </td>
     </tr>
-    <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
+
   </tbody>
+  @endforeach
 </table>
                     </div>
                 </div>
@@ -210,7 +165,7 @@
                 </div> -->
               <!-- </div>
             </div> -->
-          
+
 
           <!-- Content Row -->
           <!-- <div class="row"> -->
@@ -346,9 +301,9 @@
 
             <!-- </div> -->
           <!-- </div>
-        
-       
-       
+
+
+
         <!-.container-fluid -->
 
 
@@ -362,9 +317,9 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  
+
   <!-- End of Page Wrapper -->
- 
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
@@ -406,7 +361,7 @@
   <!-- <script src="{{'asset'('sb')}}/js/demo/chart-area-demo.js"></script>
 <script src="{{'asset'('sb')}}/js/demo/chart-pie-demo.js"></script>
 <script src="{{'asset'('sb')}}/js/demchart-bar-demo.js"></script> -->
-
+@include('sweetalert::alert')
 </body>
 
 </html>

@@ -13,7 +13,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="">
+  <a class="nav-link" href="/petugas">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
@@ -74,9 +74,9 @@
   </a>
   <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
     <div class="collapse-inner rounded">
-      <a class="collapse-item" href="login.html"> Inspeksi Kegiatan</a>
-      <a class="collapse-item" href="register.html"> Inspeksi Instalasi Tenaga <br> Listrik</a>
-
+      <a class="collapse-item" href="/petugas/hasiltemuan"> Hasil Temuan</a>
+      <a class="collapse-item" href="/petugas/sosialisasi"> Sosialisasi</a>
+      <a class="collapse-item" href="/petugas/upaya"> Upaya Pencegahan</a>
     </div>
   </div>
 </li>

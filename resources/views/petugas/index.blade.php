@@ -50,6 +50,8 @@
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
 
+
+
           <!-- Content Row -->
 
 
@@ -65,8 +67,10 @@
                 <!-- Card Body -->
               </div>
             </div>
-           
-           
+
+
+
+
 
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
@@ -84,11 +88,11 @@
                         </div>
                         <a href=""  class="btn btn-primary float-right btn-sm"><i class="fas fa-plus"></i>  Tambah</a>
 
-                </div>       
-                
                 </div>
 
-                
+                </div>
+
+
                 <table class="table table-bordered">
               <thead>
            <tr>
@@ -102,78 +106,39 @@
               <th scope="col">Status</th>
               <th scope="col">Action</th>
               <th scope="col"></th>
-                                                        
+
             </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      
-      <!-- <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form> -->
-      </td>
-      <td> <a href=""  class="d-none d-sm-inline-block btn btn-sm btn-primary float-right"><i class=""></i> Detail</a>
 
-      </td>
-    </tr>
-
+    @for ($i = 0; $i < 10; $i++)
     <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      
-      <!-- <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form> -->
-      </td>
-      <td> <a href=""  class="d-none d-sm-inline-block btn btn-sm btn-primary float-right"><i class=""></i> Detail</a>
+        <th scope="row">{{$i+1}}</th>
+          <td>1/03/2021</td>
+          <td>Pembangunan Dekat Jaringan 20V</td>
+          <td>Gambiran</td>
+          <td>-123456789</td>
+          <td>Tersengat Listrik</td>
+          <td>Gambar</td>
+          <td>Telah Melakukan Sosialisasi</td>
+          <td class="project-actions text-center">
+          <a style="color: #00bcd4; padding: 0px; background: none" href="">
+          <i class="fas fa-edit"></i></a>
 
-      </td>
-    </tr>
+          <!-- <form action="" method="get">
+              <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
+              <i class="fas fa-trash"></i></button>
+            </form> -->
+          </td>
+          <td> <a href=""  class="d-none d-sm-inline-block btn btn-sm btn-primary float-right"><i class=""></i> Detail</a>
 
-    <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      
-      <!-- <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form> -->
-      </td>
-      <td> <a href=""  class="d-none d-sm-inline-block btn btn-sm btn-primary float-right"><i class=""></i> Detail</a>
+          </td>
+        </tr>
+    @endfor
 
-      </td>
-    </tr>
+
+
+
   </tbody>
 </table>
                     </div>
@@ -220,7 +185,7 @@
                 </div> -->
               <!-- </div>
             </div> -->
-          
+
 
           <!-- Content Row -->
           <!-- <div class="row"> -->
@@ -356,9 +321,9 @@
 
             <!-- </div> -->
           <!-- </div>
-        
-       
-       
+
+
+
         <!-.container-fluid -->
 
 
@@ -372,9 +337,9 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  
+
   <!-- End of Page Wrapper -->
- 
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>

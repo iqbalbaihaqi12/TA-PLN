@@ -27,7 +27,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-   @include('admin.layout.sidebar')
+   @include('petugas.layout.sidebar')
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -55,8 +55,6 @@
 
           <!-- Content Row -->
 
-
-          
           <div class="row">
 
             <!-- Area Chart -->
@@ -67,7 +65,7 @@
                 <!-- Card Body -->
               </div>
             </div>
-           
+
             <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
@@ -77,96 +75,52 @@
                     <canvas id="myBarChart"></canvas>
                   </div>
                   <hr>
-                    
+
                 </div>
               </div> -->
 
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Tambah Sosialisasi</h6>
                 </div>
+
                 <div class="card-body">
-                <table class="table table-bordered">
-              <thead>
-           <tr>
-              <th scope="col">No</th>
-              <th scope="col">Tanggal</th>
-              <th scope="col">Detail Temuan</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">Koordinat</th>
-              <th scope="col">Potensi Bahaya</th>
-              <th scope="col">Evidence</th>
-              <th scope="col">Status</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Hapus</th>
-                                                        
-            </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-      <td>1/03/2021</td>
-      <td>Pembangunan Dekat Jaringan 20V</td>
-      <td>Gambiran</td>
-      <td>-123456789</td>
-      <td>Tersengat Listrik</td>
-      <td>Gambar</td>
-      <td>Telah Melakukan Sosialisasi</td>
-      <td class="project-actions text-center">
-      <a style="color: #00bcd4; padding: 0px; background: none" href="">
-      <i class="fas fa-edit"></i></a>
-      </td>
-      <td>
-      <form action="" method="get">
-          <button style="color: red; vertical-align: center; margin-top: 0px;padding: 0px;border: none; background: none"  type="submit">
-          <i class="fas fa-trash"></i></button> 
-        </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
+                    <form action="{{route('simpan-sosialisasi')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+
+                    <select class="custom-select" id="inputGroupSelect01" name="jadwal">
+                        <option selected>Hasil Temuan</option>
+                        @forelse($hasiltemuan as $item)
+                          <option value="{{ $item->id}}">{{$item->tanggal}}</option>
+                        @empty
+                          <option value="">Tidak ada Hasil Temuan </option>
+                        @endforelse
+                        </select>
+
+                    <div class="form-group">
+
+                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal">
+
                     </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="detail" placeholder="Detail">
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="file" class="form-control" name="evidence" placeholder="evidence">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+
+
+
+
+                  </div>
                 </div>
               </div>
 
@@ -210,7 +164,7 @@
                 </div> -->
               <!-- </div>
             </div> -->
-          
+
 
           <!-- Content Row -->
           <!-- <div class="row"> -->
@@ -346,9 +300,9 @@
 
             <!-- </div> -->
           <!-- </div>
-        
-       
-       
+
+
+
         <!-.container-fluid -->
 
 
@@ -362,9 +316,9 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  
+
   <!-- End of Page Wrapper -->
- 
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
