@@ -86,6 +86,9 @@
                 </div>
 
                 <div class="card-body">
+                <a href="/petugas/cetaklaporan"  target="_blank" class="btn btn-primary float-left btn-sm"><i class="fas fa-print"></i> Cetak Pdf</a>
+
+
                 <a href="/petugas/create-upaya "  class="btn btn-primary float-right btn-sm"><i class="fas fa-plus"></i>  Tambah Data</a>
 
                 <table class="table table-bordered">
@@ -109,7 +112,7 @@
 
         <td class="project-actions text-center">
 
-        <a href="{{url('/petugas/edit-sosialisasi',$item->id)}}"><i class="fas fa-edit" style="color: blue"></i></a>
+        <a href="{{url('/petugas/edit-u',$item->id)}}"><i class="fas fa-edit" style="color: blue"></i></a>
 
 
                 </td>

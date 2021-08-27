@@ -21,10 +21,6 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-<!-- Heading -->
-<div class="sidebar-heading">
-  Interface
-</div>
 
 <!-- Nav Item - Pages Collapse Menu -->
 <!-- <li class="nav-item">
@@ -74,7 +70,7 @@
   </a>
   <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
     <div class="collapse-inner rounded">
-      <a class="collapse-item" href="/petugas/hasiltemuan"> Hasil Temuan</a>
+      <a class="collapse-item" href="/petugas/hasiltemuan"> Temuan Inspeksi</a>
       <a class="collapse-item" href="/petugas/sosialisasi"> Sosialisasi</a>
       <a class="collapse-item" href="/petugas/upaya"> Upaya Pencegahan</a>
     </div>

@@ -109,7 +109,7 @@
 
         <td class="project-actions text-center">
 
-        <a href="{{url('/petugas/edit-sosialisasi',$item->id)}}"><i class="fas fa-edit" style="color: blue"></i></a>
+        <a href="{{url('/petugas/edit-s',$item->id)}}"><i class="fas fa-edit" style="color: blue"></i></a>
 
 
                 </td>

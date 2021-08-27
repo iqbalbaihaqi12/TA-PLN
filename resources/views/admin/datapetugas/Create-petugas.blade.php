@@ -65,7 +65,7 @@
                 <!-- Card Body -->
               </div>
             </div>
-           
+
             <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
@@ -75,20 +75,20 @@
                     <canvas id="myBarChart"></canvas>
                   </div>
                   <hr>
-                    
+
                 </div>
               </div> -->
 
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tambah Petugas</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Tambah Pengguna</h6>
                 </div>
-                
+
                 <div class="card-body">
                     <form action="{{route('simpan-datapetugas')}}" method="post">
                     {{ csrf_field() }}
-                   
+
                     <div class="form-group">
                     <input type="text" class="form-control" name="name" aria-describedby="" placeholder="Nama">
                     </div>
@@ -105,13 +105,13 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="password" placeholder="Password">
                     </div>
-                   
+
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                     </form>
 
-          
-                
+
+
 
                   </div>
                 </div>
@@ -157,7 +157,7 @@
                 </div> -->
               <!-- </div>
             </div> -->
-          
+
 
           <!-- Content Row -->
           <!-- <div class="row"> -->
@@ -293,9 +293,9 @@
 
             <!-- </div> -->
           <!-- </div>
-        
-       
-       
+
+
+
         <!-.container-fluid -->
 
 
@@ -309,9 +309,9 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  
+
   <!-- End of Page Wrapper -->
- 
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>

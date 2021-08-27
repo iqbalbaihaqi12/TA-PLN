@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Jadwal_Inspeksi;
 
 class PetugasController extends Controller
 {
@@ -13,8 +14,8 @@ class PetugasController extends Controller
      */
     public function index()
     {
-        //
-        return view('petugas.index');
+        $jadwal=Jadwal_Inspeksi::all();
+        return view('petugas.index',compact('jadwal'));
     }
 
     /**

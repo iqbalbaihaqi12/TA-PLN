@@ -11,20 +11,11 @@
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
 
-<!-- Nav Item - Dashboard -->
-<li class="nav-item active">
-  <a class="nav-link" href="/admin">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Dashboard</span></a>
-</li>
-
 <!-- Divider -->
-<hr class="sidebar-divider">
+
 
 <!-- Heading -->
-<div class="sidebar-heading">
-  Interface
-</div>
+
 
 <!-- Nav Item - Pages Collapse Menu -->
 <!-- <li class="nav-item">
@@ -49,8 +40,8 @@
   </a>
   <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
     <div class=" py-2 collapse-inner rounded">
-    <a class="collapse-item" href="\admin\jadwal">Jadwal</a>
-      <a class="collapse-item" href="\admin\datapetugas">Data Petugas</a>
+    <a class="collapse-item" href="\admin\jadwal">Jadwal Inspeksi</a>
+      <a class="collapse-item" href="\admin\datapetugas">Data Pengguna</a>
     </div>
   </div>
 </li>

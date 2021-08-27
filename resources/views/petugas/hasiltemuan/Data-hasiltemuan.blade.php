@@ -13,9 +13,10 @@
   <title>PT.PLN ULP JAJAG</title>
 
   <!-- Custom fonts for this template-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+
   <link href="{{'asset'('sb')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="{{'asset'('sb')}}/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -82,17 +83,19 @@
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Hasil Temuan</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Temuan Inspeksi</h6>
                 </div>
 
                 <div class="card-body">
-                <a href="/petugas/create-hasiltemuan"  class="btn btn-primary float-right btn-sm"><i class="fas fa-plus"></i>  Tambah Hasil Temuan</a>
 
-                <table class="table table-bordered">
+                <a href="/petugas/create-hasiltemuan"  class="btn btn-success float-right btn-sm"><i class="fas fa-plus"></i>  Tambah Temuan Inspeksi</a>
+
+                <table class="table table-bordered" id="datatable">
               <thead>
            <tr>
               <th scope="col">No</th>
               <th scope="col">Tanggal</th>
+              <th scope="col">Nomor Temuan</th>
               <th scope="col">Konstruksi</th>
               <th scope="col">Kategori</th>
               <th scope="col">Detail</th>
@@ -101,6 +104,7 @@
               <th scope="col">Koordinat</th>
               <th scope="col">Potensi Bahaya</th>
               <th scope="col">Evidence</th>
+
               <th scope="col">Action</th>
 
             </tr>
@@ -110,6 +114,7 @@
     <tr>
       <td>{{$loop->iteration}}</td>
       <td>{{date('d-m-y', strtotime($item->tanggal))}}</td>
+      <td>{{$item->nomor_temuan}}</td>
       <td>{{$item->konstruksi}}</td>
       <td>{{$item->kategori_temuan}}</td>
       <td>{{$item->detail_temuan}}</td>
@@ -117,15 +122,18 @@
       <td>{{$item->alamat_temuan}}</td>
       <td>{{$item->koordinat}}</td>
       <td>{{$item->potensi_bahaya}}</td>
-      <td>
-          {{-- <a href="{{asset('image/'.$item->evidence)}}" target="_blank" rel="noopener noreferrer"></a>Lihat Gambar</td> --}}
-            <img src="{{asset('image/'.$item->evidence)}}" height="10%" width="100%" alt="" srcset="">
-      <td class="project-actions text-center">
 
-<a href="{{url('/petugas/edit-hasiltemuan',$item->id)}}"><i class="fas fa-edit" style="color: blue"></i></a>
-
-
+        <td>
+            {{-- <a href="{{asset('image/'.$item->evidence)}}" target="_blank" rel="noopener noreferrer"></a>Lihat Gambar</td> --}}
+              <img src="{{asset('image/'.$item->evidence)}}" height="10%" width="100%" alt="" srcset="">
         </td>
+
+              <td class="project-actions text-center">
+          <a href="{{url('/petugas/edit-hasiltemuan',$item->id)}}"><i class="fas fa-edit" style="color: blue"></i></a>
+          </td>
+
+
+
     </tr>
   </tbody>
     @endforeach
@@ -362,6 +370,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="{{'asset'('sb')}}/js/sb-admin-2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
 
   <!-- Page level plugins -->
   <!-- <script src="{{'asset'('sb')}}/vendor/cht.js/Chart.min.js"></script> -->
@@ -373,7 +382,14 @@
 @include('sweetalert::alert')
 
 
+
 </body>
 
 </html>
+<script>
+    $(document).ready(function({
+        $('#datatable').DataTable();
+    }));
+</script>
+
 

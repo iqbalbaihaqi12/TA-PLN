@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 })->name('login');
-
+Route::get('/laporanexport/export', 'LaporanController@index');
 Route::post('/postlogin','LoginController@postlogin')->name('postlogin');
 Route::get('/logout','LoginController@logout')->name('logout');
 
@@ -43,16 +43,25 @@ Route::group(['middleware' => ['auth','ceklevel:petugas']],function(){
     Route::post('/petugas/simpan-hasiltemuan','HasilTemuanController@store')->name('simpan-hasiltemuan');
     Route::get('/petugas/edit-hasiltemuan/{id}','HasilTemuanController@edit')->name('edit-hasiltemuan');
     Route::post('/petugas/update-hasiltemuan/{id}','HasilTemuanController@update')->name('update-hasiltemuan');
+    Route::get('/petugas/cetaklaporan','HasilTemuanController@cetakLaporan')->name('cetaklaporan');
+
 
     //Sosialisasi
     Route::get('/petugas/sosialisasi','SosialisasiController@index');
     Route::get('/petugas/create-sosialisasi','SosialisasiController@create');
     Route::post('/petugas/simpan-sosialisasi','SosialisasiController@store')->name('simpan-sosialisasi');
+    Route::get('/petugas/edit-s/{id}','SosialisasiController@edit')->name('edit-s');
+    Route::post('/petugas/update-s/{id}','SosialisasiController@update')->name('update-s');
 
     //Upaya
     Route::get('petugas/upaya','UpayaController@index');
     Route::get('petugas/create-upaya','UpayaController@create');
     Route::post('/petugas/simpan-upaya','UpayaController@store')->name('simpan-upaya');
+    Route::get('/petugas/edit-u/{id}','UpayaController@edit')->name('edit-u');
+    Route::post('/petugas/update-u/{id}','UpayaController@update')->name('update-u');
+
+    //Export
+
 
 
 });

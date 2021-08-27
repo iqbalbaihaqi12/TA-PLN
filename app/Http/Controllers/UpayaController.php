@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Tindak_lanjut;
 use App\Upaya;
 use Illuminate\Http\Request;
 
@@ -26,7 +26,8 @@ class UpayaController extends Controller
      */
     public function create()
     {
-        return view('petugas.upaya.Create-upaya');
+        $tindaklanjut=Tindak_lanjut::all();
+        return view('petugas.upaya.Create-upaya',compact('tindaklanjut'));
     }
 
     /**
@@ -42,11 +43,23 @@ class UpayaController extends Controller
         'detail' => $request->detail,
         'evidence' => $request->evidence,
     ]);
+
+    $id_upaya=Upaya::all();
+
     if($request->hasFile('evidence')){
         $request->file('evidence')->move('image/',$request->file('evidence')->getClientOriginalName());
         $upaya->evidence= $request->file('evidence')->getClientOriginalName();
         $upaya->save();
+        foreach($id_upaya as $id_upaya){
+            Tindak_lanjut::where('id',$request->hasil)->update([
+                'status' => 'telah melakukan upaya',
+                'upaya_pencegahan_id' => $id_upaya->id,
+
+                ]) ;
+        }
+
     }
+
 
     return redirect('/petugas/upaya')->with('toast_success', 'Data Berhasil Ditambahkan');
     }
@@ -68,9 +81,12 @@ class UpayaController extends Controller
      * @param  \App\Upaya  $upaya
      * @return \Illuminate\Http\Response
      */
-    public function edit(Upaya $upaya)
+    public function edit($id)
     {
-        //
+        $tindaklanjut= Tindak_lanjut::all();
+        $upaya= Upaya::findorfail($id);
+        return view('petugas.upaya.Edit-upaya',compact('upaya','tindaklanjut'));
+
     }
 
     /**
@@ -80,10 +96,13 @@ class UpayaController extends Controller
      * @param  \App\Upaya  $upaya
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Upaya $upaya)
+    public function update(Request $request, $id)
     {
-        //
+        $upaya= Upaya::findorfail($id);
+        $upaya->update($request->all());
+        return redirect('/petugas/upaya')->with('toast_success', 'Data Berhasil Diupdate');
     }
+
 
     /**
      * Remove the specified resource from storage.

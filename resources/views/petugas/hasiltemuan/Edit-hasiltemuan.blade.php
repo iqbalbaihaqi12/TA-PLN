@@ -82,35 +82,39 @@
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tambah Hasil Temuan</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Ubah Hasil Temuan</h6>
                 </div>
 
                 <div class="card-body">
                     <form action="{{url('/petugas/update-hasiltemuan',$hasiltemuan->id)}}" method="post">
                     {{ csrf_field() }}
-
+                        <div class="form-group">
                     <select class="custom-select" id="inputGroupSelect01" name="jadwal">
                     <option selected>Jadwal Inspeksi</option>
                     @forelse($jadwal_inspeksi as $item)
-                      <option value="{{ $item->id}}">{{$item->tanggal}}</option>
+                      <option value="{{ $item->id}}" selected>{{$item->tanggal}}</option>
                     @empty
                       <option value="">Tidak ada jadwal Inspeksi Kegiatan </option>
                     @endforelse
                     </select>
+                </div>
                     <div class="form-group">
 
-                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal" value="{{$hasiltemuan->tanggal}}">
+                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal" value="{{date('d-m-y', strtotime($hasiltemuan->tanggal))}}">
 
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nomor" placeholder="Nomor Temuan" value="{{$hasiltemuan->nomor_temuan}}">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="konstruksi" placeholder="Konstruksi" value="{{$hasiltemuan->konstruksi}}">
                     </div>
                     <div class="input-group mb-3">
 
-  <select class="custom-select" id="inputGroupSelect01" name="kategori" value="{{$hasiltemuan->kategori_temuan}}">
-    <option selected>Kategori</option>
-    <option value="1">Inspeksi Kegiatan </option>
-    <option value="2">Inspeksi Instalasi Tenaga Listrik</option>
+  <select class="custom-select" id="inputGroupSelect01" name="kategori">
+    <option selected value="{{$hasiltemuan->kategori_temuan}}">Kategori</option>
+    <option value="Inspeksi Kegiatan">Inspeksi Kegiatan </option>
+    <option value="Inspeksi Instalasi Tenaga Listrik">Inspeksi Instalasi Tenaga Listrik</option>
 
   </select>
 </div>

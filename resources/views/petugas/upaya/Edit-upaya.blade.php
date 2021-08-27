@@ -65,7 +65,7 @@
                 <!-- Card Body -->
               </div>
             </div>
-           
+
             <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
@@ -75,41 +75,40 @@
                     <canvas id="myBarChart"></canvas>
                   </div>
                   <hr>
-                    
+
                 </div>
               </div> -->
 
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tambah Hasil Temuan</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Ubah Hasil Temuan</h6>
                 </div>
-                
+
                 <div class="card-body">
-                    <form action="{{route('simpan-upaya')}}" method="post">
+                    <form action="{{url('/petugas/update-u',$upaya->id)}}" method="post">
                     {{ csrf_field() }}
-                   
-                    <div class="form-group">
 
-                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal">
-            
-                    </div>
-                    
+
                     <div class="form-group">
-                        <input type="text" class="form-control" name="penyulang" placeholder="Detail">
+                     <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal" value="{{$upaya->tanggal}}">
                     </div>
 
-                    
                     <div class="form-group">
-                        <input type="file" class="form-control" name="section" placeholder="evidence">
+                        <input type="text" class="form-control" name="detail" placeholder="Detail"  value="{{$upaya->detail}}">
                     </div>
-                   
+
+
+                    <div class="form-group">
+                        <input type="file" class="form-control" name="evidence" placeholder="evidence"  value="{{$upaya->evidence}}">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                     </form>
 
-          
-                
+
+
 
                   </div>
                 </div>
@@ -155,7 +154,7 @@
                 </div> -->
               <!-- </div>
             </div> -->
-          
+
 
           <!-- Content Row -->
           <!-- <div class="row"> -->
@@ -291,9 +290,9 @@
 
             <!-- </div> -->
           <!-- </div>
-        
-       
-       
+
+
+
         <!-.container-fluid -->
 
 
@@ -307,9 +306,9 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  
+
   <!-- End of Page Wrapper -->
- 
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>

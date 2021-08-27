@@ -102,7 +102,7 @@
                         <input type="text" class="form-control" name="section"  placeholder="Section" value="{{$jadwal->section}}">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Ubah Data</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
 
                     </form>
 

@@ -18,7 +18,6 @@ class CreateSosialisasisTable extends Migration
             $table->date('tanggal');
             $table->string('evidence');
             $table->string('detail');
-            $table->unsignedBigInteger('tindak_lanjut_id');
             $table->timestamps();
         });
     }

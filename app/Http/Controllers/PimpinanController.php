@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tindak_lanjut;
+use App\Hasil_Temuan;
+use App\Jadwal_Inspeksi;
 
 class PimpinanController extends Controller
 {
@@ -14,7 +17,19 @@ class PimpinanController extends Controller
     public function index()
     {
         //
-        return view('pimpinan.index');
+
+        //menyiapkan data chart
+        $kategori=[];
+        $jadwalinspeksi=Jadwal_Inspeksi::all()->last()->penyulang;
+        $kategori=$jadwalinspeksi;
+
+        $data = [];
+        $hasiltemuan=Hasil_Temuan::all()->last()->id;
+        // $tindaklanjut=Tindak_lanjut::all()->last()->id;
+        // $data = $tindaklanjut;
+        $data = $hasiltemuan;
+        // dd(json_encode($data));
+        return view('pimpinan.index',['data'=>$data,'kategori'=>$kategori]);
     }
 
     /**

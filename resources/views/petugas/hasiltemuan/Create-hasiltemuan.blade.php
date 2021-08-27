@@ -82,7 +82,7 @@
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tambah Hasil Temuan</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Tambah Temuan Inspeksi</h6>
                 </div>
 
                 <div class="card-body">
@@ -92,15 +92,18 @@
                     <select class="custom-select" id="inputGroupSelect01" name="jadwal">
                     <option selected>Jadwal Inspeksi</option>
                     @forelse($jadwal_inspeksi as $item)
-                      <option value="{{ $item->id}}">{{$item->tanggal}}</option>
+                      <option value="{{ $item->id}}">{{Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y')}}</option>
                     @empty
                       <option value="">Tidak ada jadwal Inspeksi Kegiatan </option>
                     @endforelse
                     </select>
                     <div class="form-group">
 
-                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal">
+                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal" >
 
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nomor" placeholder="Nomor Temuan">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="konstruksi" placeholder="Konstruksi">
@@ -109,8 +112,8 @@
 
   <select class="custom-select" id="inputGroupSelect01" name="kategori">
     <option selected>Kategori</option>
-    <option value="1">Inspeksi Kegiatan </option>
-    <option value="2">Inspeksi Instalasi Tenaga Listrik</option>
+    <option value="Inspeksi Bahaya Listrik">Inspeksi Bahaya Listrik </option>
+    <option value="Inspeksi Instalasi Tenaga Listrik">Inspeksi Instalasi Tenaga Listrik</option>
 
   </select>
 </div>

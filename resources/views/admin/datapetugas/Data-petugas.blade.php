@@ -82,11 +82,11 @@
               <!-- Tabel data laporan -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Kelola Akun Petugas</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Kelola Akun Pengguna</h6>
                 </div>
 
                 <div class="card-body">
-                <a href="/admin/create-datapetugas"  class="btn btn-primary float-right btn-sm"><i class="fas fa-plus"></i>  Tambah Jadwal</a>
+                <a href="/admin/create-datapetugas"  class="btn btn-primary float-right btn-sm"><i class="fas fa-plus"></i>  Tambah Pengguna</a>
 
                 <table class="table table-bordered">
               <thead>

@@ -18,6 +18,7 @@ class CreateTindakLanjutsTable extends Migration
             $table->string('status');
             $table->string('keterangan_tindak_lanjut');
             $table->unsignedBigInteger('hasil_temuan_id');
+            $table->unsignedBigInteger('sosialisasi_id');
             $table->unsignedBigInteger('upaya_pencegahan_id');
             $table->timestamps();
         });

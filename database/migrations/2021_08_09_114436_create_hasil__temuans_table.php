@@ -16,6 +16,7 @@ class CreateHasilTemuansTable extends Migration
         Schema::create('hasil__temuans', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
+            $table->string('nomor_temuan');
             $table->string('konstruksi');
             $table->string('kategori_temuan');
             $table->string('detail_temuan');

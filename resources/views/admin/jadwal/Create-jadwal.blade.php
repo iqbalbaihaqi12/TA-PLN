@@ -65,7 +65,7 @@
                 <!-- Card Body -->
               </div>
             </div>
-           
+
             <!-- <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Laporan Inspeksi</h6>
@@ -75,7 +75,7 @@
                     <canvas id="myBarChart"></canvas>
                   </div>
                   <hr>
-                    
+
                 </div>
               </div> -->
 
@@ -84,30 +84,45 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Tambah Jadwal Inspeksi</h6>
                 </div>
-                
+
                 <div class="card-body">
                     <form action="{{route('simpan-jadwal')}}" method="post">
                     {{ csrf_field() }}
-                   
+
                     <div class="form-group">
 
-                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal">
-            
+                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal" min="<?php echo date('Y-m-d'); ?>">
+
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="penyulang" placeholder="Penyulang">
+
+                        <div class="input-group mb-3">
+
+                            <select class="custom-select" id="inputGroupSelect01" name="penyulang">
+                              <option selected>Penyulang</option>
+                              <option value="Kesilir">Kesilir </option>
+                              <option value="Dasri"> Dasri</option>
+                              <option value="Purwoharjo"> Purwoharjo</option>
+                              <option value="Jajag">Jajag </option>
+                              <option value="Bsi1">Bsi 1 </option>
+                              <option value="Bsi2">Bsi 2 </option>
+                              <option value="Blokagung"> Blokagung</option>
+
+
+                            </select>
+                          </div>
                     </div>
 
                     <div class="form-group">
                         <input type="text" class="form-control" name="section" placeholder="Section">
                     </div>
-                   
+
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                     </form>
 
-          
-                
+
+
 
                   </div>
                 </div>
@@ -153,7 +168,7 @@
                 </div> -->
               <!-- </div>
             </div> -->
-          
+
 
           <!-- Content Row -->
           <!-- <div class="row"> -->
@@ -289,9 +304,9 @@
 
             <!-- </div> -->
           <!-- </div>
-        
-       
-       
+
+
+
         <!-.container-fluid -->
 
 
@@ -305,9 +320,9 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  
+
   <!-- End of Page Wrapper -->
- 
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>

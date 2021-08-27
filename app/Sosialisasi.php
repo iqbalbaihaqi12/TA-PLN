@@ -8,5 +8,5 @@ class Sosialisasi extends Model
 {
     protected $table = "sosialisasis";
     protected $primaryKey = "id";
-    protected $fillable = ['id','tanggal','evidence','detail','tindak_lanjut_id'];
+    protected $fillable = ['id','tanggal','evidence','detail'];
 }

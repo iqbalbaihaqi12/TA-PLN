@@ -88,19 +88,19 @@
                 <div class="card-body">
                     <form action="{{route('simpan-sosialisasi')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
-
-                    <select class="custom-select" id="inputGroupSelect01" name="jadwal">
+                        <div class="form-group">
+                    <select class="custom-select" id="inputGroupSelect01" name="hasil">
                         <option selected>Hasil Temuan</option>
                         @forelse($hasiltemuan as $item)
-                          <option value="{{ $item->id}}">{{$item->tanggal}}</option>
+                          <option value="{{$item->id}}">{{Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y')}} - {{$item->detail_temuan}}</option>
                         @empty
                           <option value="">Tidak ada Hasil Temuan </option>
                         @endforelse
                         </select>
-
+                    </div>
                     <div class="form-group">
 
-                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal">
+                    <input type="date" class="form-control" name="tanggal" aria-describedby="" placeholder="Tanggal" >
 
                     </div>
 
@@ -112,6 +112,11 @@
                     <div class="form-group">
                         <input type="file" class="form-control" name="evidence" placeholder="evidence">
                     </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="keterangan" placeholder="Keterangan">
+                    </div>
+
 
                     <button type="submit" class="btn btn-primary">Submit</button>
 
